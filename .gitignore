@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # User-specific stuff
 .idea/
 
@@ -111,3 +112,15 @@ buildNumber.properties
 
 # Common working directory
 run/
+=======
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+*.idea
+*.iml
+>>>>>>> cadc4af394e6092403c9d04c68fa63f1747f5218
