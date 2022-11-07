@@ -30,7 +30,6 @@ public class ItemStackBuilder {
         return this.is;
     }
 
-
     public ItemStackBuilder setName(String name) {
         ItemMeta im = this.is.getItemMeta();
         im.setDisplayName(name);
