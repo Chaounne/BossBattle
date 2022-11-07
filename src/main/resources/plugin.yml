@@ -1,0 +1,12 @@
+name: BossBattle
+version: '${project.version}'
+main: me.chaounne.bossbattle.BossBattle
+api-version: 1.16
+authors: [ Chaounne ]
+description: Boss battle plugin for Chaounne's event
+website: https://twitter.com/SsbShawn
+commands:
+  bosswand:
+    description: gives you the boss wand item in order to spawn bosses
+    usage: /bosswand
+    aliases: bosswand

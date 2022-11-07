@@ -1,2 +1,2 @@
 # BossBattle
- Plugin for Chaounne's Event
+A minecraft plugin for Chaounne's Event
