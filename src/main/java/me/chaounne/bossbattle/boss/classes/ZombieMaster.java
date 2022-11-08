@@ -101,6 +101,8 @@ public class ZombieMaster extends Boss {
         for (Player p : Bukkit.getOnlinePlayers()) {
             p.playSound(p.getLocation(), Sound.ENTITY_ZOMBIE_DEATH, 1, 1);
             bossBar.removePlayer(p);
+            bossBar.setProgress(0.0);
+            bossBar.setVisible(false);
             p.sendMessage("§c§lBOSS KILLED");
         }
         e.getDrops().clear();

@@ -74,6 +74,7 @@ public class BosswandEvents implements Listener {
 
             if (e.getEntity() == boss.getEntity()) {
                 boss.runOnDeathEvent(e);
+                boss.getBossBar().removeAll();
                 ActualBoss.setBoss(null);
             }
         }
