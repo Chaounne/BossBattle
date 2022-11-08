@@ -58,20 +58,24 @@ public class BosswandEvents implements Listener {
 
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent e) {
-        Boss boss = ActualBoss.getBoss();
+        if(ActualBoss.getBoss() != null) {
+            Boss boss = ActualBoss.getBoss();
 
-        if(e.getEntity() == boss.getEntity() && e.getDamager() instanceof Player) {
-            boss.runOnDamageEvent(e);
+            if (e.getEntity() == boss.getEntity() && e.getDamager() instanceof Player) {
+                boss.runOnDamageEvent(e);
+            }
         }
     }
 
     @EventHandler
     public void onZombieKilled(EntityDeathEvent e) {
-        Boss boss = ActualBoss.getBoss();
+        if(ActualBoss.getBoss() != null) {
+            Boss boss = ActualBoss.getBoss();
 
-        if(e.getEntity() == boss.getEntity()) {
-            boss.runOnDeathEvent(e);
-            ActualBoss.setBoss(null);
+            if (e.getEntity() == boss.getEntity()) {
+                boss.runOnDeathEvent(e);
+                ActualBoss.setBoss(null);
+            }
         }
     }
 }
