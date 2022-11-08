@@ -26,14 +26,14 @@ public class ZombieMaster extends Boss {
     private RepeatingTask task;
 
     public ZombieMaster(Block block) {
-        super();
-        this.spawn(block);
+        super(block);
+        this.spawn();
     }
 
     @Override
-    public void spawn(Block block) {
+    public void spawn() {
         double hp = 200.0;
-        World world = block.getWorld();
+        World world = spawnBlock.getWorld();
 
 
         ItemStackBuilder itemStackBuilder = new ItemStackBuilder(Material.LEATHER_HELMET);
@@ -41,7 +41,7 @@ public class ZombieMaster extends Boss {
         helmMeta.setColor(Color.AQUA);
         ItemStack helmIT = itemStackBuilder.addEnchant(Enchantment.LUCK, 1).setItemMeta(helmMeta).getItemStack();
 
-        Zombie zombieMaster = world.spawn(block.getLocation().add(0.5,0,0.5), Zombie.class);
+        Zombie zombieMaster = world.spawn(spawnBlock.getLocation().add(0.5,0,0.5), Zombie.class);
         zombieMaster.setCustomName("Zombie Master");
         zombieMaster.setCustomNameVisible(true);
         Objects.requireNonNull(zombieMaster.getEquipment()).setHelmet(helmIT);

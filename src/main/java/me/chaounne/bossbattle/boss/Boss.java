@@ -8,11 +8,12 @@ import org.bukkit.event.entity.EntityDeathEvent;
 
 public abstract class Boss {
 
+    protected Block spawnBlock;
     protected Entity entity;
     protected BossBar bossBar;
 
-    protected Boss() {
-
+    protected Boss(Block block) {
+        this.spawnBlock = block;
     }
 
     public Entity getEntity() {
@@ -23,7 +24,7 @@ public abstract class Boss {
         return bossBar;
     }
 
-    public abstract void spawn(Block block);
+    public abstract void spawn();
 
     public abstract void runOnDamageEvent(EntityDamageByEntityEvent e);
 
