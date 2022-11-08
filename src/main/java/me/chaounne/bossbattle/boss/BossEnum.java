@@ -1,11 +1,13 @@
 package me.chaounne.bossbattle.boss;
 
+import me.chaounne.bossbattle.boss.classes.MrDemay;
 import me.chaounne.bossbattle.boss.classes.ZombieMaster;
 import org.bukkit.Material;
 
 public enum BossEnum {
 
-    ZombieMaster(ZombieMaster.class, Material.SLIME_BLOCK);
+    ZombieMaster(ZombieMaster.class, Material.SLIME_BLOCK),
+    MrDemay(MrDemay.class, Material.EMERALD_BLOCK);
 
     private Class<? extends Boss> bossClass;
     private Material material;
