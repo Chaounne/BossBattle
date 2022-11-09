@@ -26,13 +26,12 @@ public class ZombieMaster extends Boss {
     private RepeatingTask task;
 
     public ZombieMaster(Block block) {
-        super(block);
+        super(block, 200.0, "Zombie Master");
         this.spawn();
     }
 
     @Override
     public void spawn() {
-        double hp = 200.0;
         World world = spawnBlock.getWorld();
 
 

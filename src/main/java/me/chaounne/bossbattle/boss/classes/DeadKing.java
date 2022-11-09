@@ -36,13 +36,12 @@ public class DeadKing extends Boss {
 
 
     public DeadKing(Block block) {
-        super(block);
+        super(block, 585.0, "Dead King");
         this.spawn();
     }
 
     @Override
     public void spawn() {
-        double hp = 585.0;
         final int[] i = {0};
         Cooldown cd;
         PotionEffect fireRes = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 100, 1);
