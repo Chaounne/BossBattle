@@ -44,13 +44,13 @@ public class BosswandEvents implements Listener {
         if(player.getInventory().getItemInMainHand().equals(wand)){
 
             if(ActualBoss.getBoss() == null) {
-                try {
-                    Boss boss = Objects.requireNonNull(BossEnum.getBossEnumByMaterial(
-                                    event.getBlock().getType())).getBossClass()
-                            .getDeclaredConstructor(Block.class).newInstance(event.getBlock());
-                    ActualBoss.setBoss(boss);
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if(BossEnum.getBossEnumByMaterial(event.getBlock().getType()) != null) {
+                    BossEnum bossEnum = BossEnum.getBossEnumByMaterial(event.getBlock().getType());
+                    try {
+                        ActualBoss.setBoss((Boss) bossEnum.getBossClass().getConstructor(Block.class).newInstance(event.getBlock()));
+                    } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
